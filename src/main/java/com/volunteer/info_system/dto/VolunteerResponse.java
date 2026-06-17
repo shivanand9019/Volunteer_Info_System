@@ -11,5 +11,9 @@ public class VolunteerResponse {
     private String availability;
     private String address;
     private LocalDate joinedDate;
+
+    private String userName;
+    private String userEmail;
+    private Long userId;
     
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 public class VolunteerRequest {
-    
+    private Long userId;
     private String phone;
     private String skills;
     private String availability;

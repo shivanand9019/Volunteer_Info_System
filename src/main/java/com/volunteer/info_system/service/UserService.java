@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.volunteer.info_system.dto.UserRequest;
 import com.volunteer.info_system.entity.User;
+import com.volunteer.info_system.exception.UserNotFoundException;
 import com.volunteer.info_system.repository.UserRepository;
 
 @Service
@@ -28,7 +29,7 @@ public class UserService {
             user.setRole(userRequest.getRole());
             userRepository.save(user);
             } else{
-            return ResponseEntity.status(404).body("User Already Exists with this email");
+            throw new UserNotFoundException(userRequest.getEmail());
 
         }
             
